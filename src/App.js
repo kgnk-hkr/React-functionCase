@@ -4,8 +4,10 @@ import SampleButton from './SampleButton';
 
 function App() {
   return (
-    <div>
-      <SampleButton />
+    <div >
+      <SampleButton id="samplebutton1"/>
+      <SampleButton id="samplebutton2"/>
+      <SampleButton id="samplebutton3"/>
     </div>
   );
 }

@@ -1,11 +1,11 @@
 import './SampleButton.css';
 import React from 'react';
 
-function SampleButton() {
+function SampleButton(props) {
 
   // クリックイベントで実行する処理
   function handleClick(e) {
-    const samplebutton = document.getElementById('samplebutton');
+    const samplebutton = document.getElementById(props.id);
 
     // sampleButton-ngのクラスが適用されているかで動作を分ける
     if (!samplebutton.classList.contains('sampleButton-ng')) {
@@ -22,10 +22,11 @@ function SampleButton() {
   }
 
   return (
-    <div onClick={handleClick} class="sampleButton-ok" id="samplebutton">
+    // idは上位から受け取ったものを利用する
+    <div onClick={handleClick} className="sampleButton-ok" id={props.id}>
       OK
     </div >
   );
 }
 
-export default SampleButton;//他の関数から呼び出せるように
+export default SampleButton;
